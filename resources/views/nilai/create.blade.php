@@ -3,7 +3,11 @@
 @section('content')
 
 <div class="container">
-
+            @error('siswa_id')
+                <div class="alert alert-danger mt-2">
+                    {{ $message }}
+                </div>
+            @enderror
     <h1>Input Nilai</h1>
 
     <form action="{{ route('nilai.store') }}" method="POST">
@@ -24,6 +28,7 @@
 
         <div class="mb-3">
             <label class="form-label">Siswa</label>
+
             <select name="siswa_id" id="siswa_id" class="form-control" required disabled>
                 <option value="">-- Pilih Siswa --</option>
 
@@ -34,6 +39,7 @@
                     </option>
                 @endforeach
             </select>
+
         </div>
 
         <div class="mb-3">
