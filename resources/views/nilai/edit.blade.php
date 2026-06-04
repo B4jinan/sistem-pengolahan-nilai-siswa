@@ -21,6 +21,19 @@
         </div>
 
         <div class="mb-3">
+            <label class="form-label">Kelas</label>
+            <select name="kelas" class="form-control" required>
+                <option value="">-- Pilih Kelas --</option>
+                <option value="1" {{ old('kelas', $nilai->kelas) == '1' ? 'selected' : '' }}>Kelas 1</option>
+                <option value="2" {{ old('kelas', $nilai->kelas) == '2' ? 'selected' : '' }}>Kelas 2</option>
+                <option value="3" {{ old('kelas', $nilai->kelas) == '3' ? 'selected' : '' }}>Kelas 3</option>
+                <option value="4" {{ old('kelas', $nilai->kelas) == '4' ? 'selected' : '' }}>Kelas 4</option>
+                <option value="5" {{ old('kelas', $nilai->kelas) == '5' ? 'selected' : '' }}>Kelas 5</option>
+                <option value="6" {{ old('kelas', $nilai->kelas) == '6' ? 'selected' : '' }}>Kelas 6</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
             <label>Guru</label>
             <select name="guru_id" class="form-control">
                 @foreach($gurus as $guru)

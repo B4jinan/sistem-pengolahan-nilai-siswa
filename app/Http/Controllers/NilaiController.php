@@ -51,7 +51,10 @@ class NilaiController extends Controller
                 ]);
         }
 
-        $nilaiAkhir = ($request->nilai_tugas + $request->nilai_uts + $request->nilai_uas) / 3;
+        $nilaiAkhir =
+            ($request->nilai_tugas * 0.30) +
+            ($request->nilai_uts * 0.30) +
+            ($request->nilai_uas * 0.40);
 
         $status = $nilaiAkhir >= 75 ? 'Lulus' : 'Tidak Lulus';
 
@@ -122,11 +125,10 @@ class NilaiController extends Controller
                 ]);
         }
         
-        $nilaiAkhir = (
-            $request->nilai_tugas +
-            $request->nilai_uts +
-            $request->nilai_uas
-        ) / 3;
+        $nilaiAkhir =
+            ($request->nilai_tugas * 0.30) +
+            ($request->nilai_uts * 0.30) +
+            ($request->nilai_uas * 0.40);
 
         $status = $nilaiAkhir >= 75 ? 'Lulus' : 'Tidak Lulus';
 
